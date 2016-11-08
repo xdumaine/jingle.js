@@ -4,7 +4,7 @@ var WildEmitter = require('wildemitter');
 var webrtc = require('webrtcsupport');
 
 var BaseSession = require('jingle-session');
-var MediaSession = require('jingle-media-session');
+var MediaSession = require('jingle-media-session-purecloud');
 var FileSession = require('jingle-filetransfer-session');
 
 
