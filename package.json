@@ -11,7 +11,7 @@
   "dependencies": {
     "extend-object": "^1.0.0",
     "intersect": "^0.1.0",
-    "jingle-filetransfer-session": "^2.0.0",
+    "jingle-filetransfer-session": "2.0.0",
     "jingle-media-session-purecloud": "^2.0.0",
     "jingle-session": "^2.0.0",
     "webrtcsupport": "^1.1.0",
