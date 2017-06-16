@@ -1,6 +1,5 @@
 var test = require('tape');
 var SessionManager = require('../');
-var adapter = require('webrtc-adapter-test'); // jshint ignore:line
 
 function setupSessionManagers() {
     var jingleA = new SessionManager({
@@ -11,7 +10,7 @@ function setupSessionManagers() {
         jid: 'userB@example.com/bar'
     });
     var queueB = [];
-    
+
     jingleA.on('send', function (data) {
         data.from = jingleA.jid;
         queueB.push(data);
