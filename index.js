@@ -5,7 +5,7 @@ var webrtc = require('webrtcsupport');
 
 var BaseSession = require('jingle-session');
 var MediaSession = require('jingle-media-session-purecloud');
-var FileSession = require('jingle-filetransfer-session');
+var FileSession = require('jingle-filetransfer-session-purecloud');
 
 
 function SessionManager(conf) {
