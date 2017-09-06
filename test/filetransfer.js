@@ -10,7 +10,7 @@ function setupSessionManagers() {
         jid: 'userB@example.com/bar'
     });
     var queueB = [];
-
+    
     jingleA.on('send', function (data) {
         data.from = jingleA.jid;
         queueB.push(data);
@@ -51,7 +51,6 @@ function getFile(){
 
 test('filetransfer', function (t) {
     var managers = setupSessionManagers();
-    var sendFile;
     managers[1].on('incoming', function (session) {
         t.pass('peer got incoming session');
         // FIXME: test it is a file transfer session
@@ -80,6 +79,6 @@ test('filetransfer', function (t) {
             t.pass('P2P connection established');
         }
     });
-    sendFile = getFile();
+    var sendFile = getFile();
     sess.start(sendFile);
 });
