@@ -1,7 +1,7 @@
 {
   "name": "jingle-purecloud",
   "description": "Generic Jingle via WebRTC session manager.",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "author": "Lance Stout <lance@andyet.net>",
   "bugs": "https://github.com/otalk/jingle.js/issues",
   "contributors": [
@@ -11,7 +11,7 @@
   "dependencies": {
     "extend-object": "^1.0.0",
     "intersect": "^0.1.0",
-    "jingle-filetransfer-session": "2.0.0",
+    "jingle-filetransfer-session-purecloud": "3.0.0",
     "jingle-media-session-purecloud": "^3.0.0",
     "jingle-session": "^2.0.0",
     "webrtcsupport": "^1.1.0",
