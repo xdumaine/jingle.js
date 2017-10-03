@@ -68,7 +68,9 @@ function SessionManager(conf) {
     this.config = {
         debug: false,
         peerConnectionConfig: {
-            iceServers: conf.iceServers || [{'url': 'stun:stun.l.google.com:19302'}]
+            iceServers: conf.iceServers || [{'url': 'stun:stun.l.google.com:19302'}],
+            iceTransportPolicy: conf.iceTransportPolicy || 'all',
+            disableEOCShortCircuit: conf.disableEOCShortCircuit
         },
         peerConnectionConstraints: {
             optional: [
@@ -164,6 +166,8 @@ SessionManager.prototype.createMediaSession = function (peer, sid, stream) {
         stream: stream,
         parent: this,
         iceServers: this.iceServers,
+        iceTransportPolicy: this.config.peerConnectionConfig.iceTransportPolicy,
+        disableEOCShortCircuit: this.config.peerConnectionConfig.disableEOCShortCircuit,
         constraints: this.config.peerConnectionConstraints
     });
 
@@ -384,6 +388,8 @@ SessionManager.prototype.process = function (req) {
             applicationTypes: applicationTypes,
             transportTypes: transportTypes,
             iceServers: this.iceServers,
+            iceTransportPolicy: this.config.peerConnectionConfig.iceTransportPolicy,
+            disableEOCShortCircuit: this.config.peerConnectionConfig.disableEOCShortCircuit,
             constraints: this.config.peerConnectionConstraints
         }, req);
     }
