@@ -70,7 +70,8 @@ function SessionManager(conf) {
         peerConnectionConfig: {
             iceServers: conf.iceServers || [{'url': 'stun:stun.l.google.com:19302'}],
             iceTransportPolicy: conf.iceTransportPolicy || 'all',
-            disableEOCShortCircuit: conf.disableEOCShortCircuit
+            disableEOCShortCircuit: conf.disableEOCShortCircuit,
+            signalIceConnected: !!conf.signalIceConnected
         },
         peerConnectionConstraints: {
             optional: [
@@ -168,6 +169,7 @@ SessionManager.prototype.createMediaSession = function (peer, sid, stream) {
         iceServers: this.iceServers,
         iceTransportPolicy: this.config.peerConnectionConfig.iceTransportPolicy,
         disableEOCShortCircuit: this.config.peerConnectionConfig.disableEOCShortCircuit,
+        signalIceConnected: this.config.peerConnectionConfig.signalIceConnected,
         constraints: this.config.peerConnectionConstraints
     });
 
@@ -390,6 +392,7 @@ SessionManager.prototype.process = function (req) {
             iceServers: this.iceServers,
             iceTransportPolicy: this.config.peerConnectionConfig.iceTransportPolicy,
             disableEOCShortCircuit: this.config.peerConnectionConfig.disableEOCShortCircuit,
+            signalIceConnected: this.config.peerConnectionConfig.signalIceConnected,
             constraints: this.config.peerConnectionConstraints
         }, req);
     }
